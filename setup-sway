@@ -1,0 +1,38 @@
+#!/bin/bash
+
+### Install packages ####
+echo -e "Installing packages...\n"
+
+yay -S --noconfirm \
+sway swww waybar kitty wofi \
+ttf-jetbrains-mono-nerd noto-fonts-emoji ttf-font-awesome \
+pulseaudio pamixer \
+swappy grim slurp \
+bluez bluez-utils blueberry\ 
+xfce4-settings dracula-icons-git \
+ranger cava neofetch micro python-pillow \
+
+### Enable bluetooth ###
+echo -e "Starting the Bluetooth Service...\n"
+sudo systemctl enable --now bluetooth.service
+
+### Copy Config Files ###
+echo -e "Copying config files...\n"
+
+cp -R sway ~/.config/
+cp -R waybar ~/.config/
+cp -R wofi ~/.config/
+cp -R wlogout ~/.config/
+cp -R kitty ~/.config/    
+
+cp -R ranger ~/.config/
+cp -R cava ~/.config/
+cp -R neofetch ~/.config/
+cp -R micro ~/.config/
+
+### Install pacman mirrors script ###
+cp -R updmirror /usr/local/bin/
+chmod +x /usr/local/bin/updmirror
+
+### Script is done ###
+echo -e "Script had completed.\n"

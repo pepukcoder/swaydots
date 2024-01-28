@@ -1,0 +1,87 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces","sway/mode","sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu","memory","network","bluetooth","pulseaudio#microphone","pulseaudio","battery"],
+    "sway/window": {
+        "max-length": 50
+    },
+    
+    "clock": {
+        "format": "{: %H:%M}",
+	"format-alt": "{: %d.%m.%Y}",
+	"tooltip-format": "<span font='Jetbrains Nerd Font Mono 10'><big>{:%d %B}</big>\n<tt><small>{calendar}</small></tt></span>"
+    },
+    
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 10,
+            "critical": 5
+        },
+        "interval": 5,
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+	"tooltip": false,
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "format-muted": "Muted",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " ",
+        "format-source-muted": " ",
+	"tooltip": false,
+	"on-click": "pamixer --default-source -t",
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "tooltip-format": "{essid}",
+        "format-linked": "{ifname}",
+        "format-disconnected": " ",
+	"interval": 5,
+	"format-alt": " {bandwidthDownBytes}",
+    },
+
+    "bluetooth": {
+	"format": "+",
+	"format-disabled": "",
+	"format-connected": "C",
+	"tooltip-format-connected": " {device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}",
+	"on-click": "exec blueberry"
+    },
+    
+    "cpu": {
+      "interval": 5,
+      "format": " {usage}%",
+      "max-length": 10
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {}%",
+        "format-alt":" {used:0.1f}G",
+        "max-length": 10
+    }
+}

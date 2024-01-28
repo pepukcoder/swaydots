@@ -1,0 +1,31 @@
+#inner-box {
+  margin: 10px;
+  margin-top: 0px;
+}
+
+#input { 
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+#text {
+  margin-left: 1em;
+}
+
+#entry:selected {
+  background-color: #262c3c;
+  color: #262c3c;
+  border-radius: 10px;
+}
+
+window {
+  border: 2px solid #78cad8;
+  color: #ffffff;
+  border-radius: 10px;
+  background-color: #1f212b;
+}

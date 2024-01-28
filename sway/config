@@ -1,0 +1,26 @@
+#corner_radius 5
+default_border pixel 2
+
+gaps inner 4
+
+blur off
+blur_xray off
+blur_passes 2
+blur_radius 5
+shadows on
+shadows_on_csd off
+shadow_blur_radius 4
+shadow_color #0000007F
+
+default_dim_inactive 0.0
+
+client.focused #000000 #78CAD8 #FFFFFF
+client.unfocused #000000 #262C3C #FFFFFF
+
+bar {
+    position top
+    swaybar_command waybar
+}
+
+include config.d/*
+include /etc/sway/config.d/*

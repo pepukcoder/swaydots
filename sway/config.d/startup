@@ -1,0 +1,2 @@
+exec swww init
+exec swww img ~/.config/sway/wallpaper.png
