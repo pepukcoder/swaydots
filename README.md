@@ -16,5 +16,5 @@ chmod +x setup-sway
 ```
 run installation script
 ```
-./setup-sway
+setup-sway
 ```

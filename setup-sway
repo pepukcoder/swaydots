@@ -4,7 +4,7 @@
 echo -e "Installing packages...\n"
 
 yay -S --noconfirm \
-sway swww waybar kitty wofi \
+sway swww waybar kitty wofi xorg-xwayland\
 ttf-jetbrains-mono-nerd noto-fonts-emoji ttf-font-awesome \
 pulseaudio pamixer \
 swappy grim slurp \
