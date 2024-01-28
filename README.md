@@ -12,9 +12,9 @@ sudo chown USRNAME:USRNAME swaydots/
 cd sway
 ```
 ```
-chmod +x set-hypr
+chmod +x setup-sway
 ```
 run installation script
 ```
-./set-hypr
+./setup-sway
 ```
