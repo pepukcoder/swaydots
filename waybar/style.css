@@ -6,8 +6,7 @@
 }
 
 window#waybar {
-    background: #1f212b;
-    border-bottom: 2px solid #262c3c;
+    background: none;
 }
 
 tooltip {
@@ -15,34 +14,35 @@ tooltip {
     border-radius: 10px;
 }
 
-#workspaces {
-    background: #262c3c;
-    border-radius: 0px 12px 0px 0px;
-    padding-right: 4px;
-    padding-left: 4px;
+#workspaces {    
+    margin-left: 4px;
+    margin-top: 4px;
+    border-radius: 10px; 
+    background: #353535;
 }
 #workspaces button {
     color: #ffffff;
-    margin: 2px 0 4px 0;
-    padding: 0 3px 0 3px; 
-    border-radius: 20px;
+    padding: 0 2px 0 2px;
+    border-radius: 10px;
+    border: none;
 }
 
 #workspaces button.focused {
-    color: #262c3c;
-    background: #78cad8;
+    color: #ffffff;
+    background: #8aa493;
 }
 
 #workspaces button.urgent {
-    background: #a6e3a1;
-    color: #000000;
+    background: #ff6242;
+    color: #ffffff;
 }
 
 #workspaces button:hover {
     background: rgba(255,255,255,0.2);
     border: 0px;
     color: #ffffff;
-    box-shadow: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
 }
 #window,
 #clock,
@@ -52,39 +52,32 @@ tooltip {
 #pulseaudio,
 #network,
 #bluetooth,
-#tray,
+#custom-arch,
 #mode,
 #backlight {
-    color: #262c3c;
-    background: #78cad8;
-    padding-left: 5px;
-    padding-right: 5px;
+    color: #ffffff;
+    padding-left: 4px;
+    padding-right: 4px;
     margin-top: 4px;
-    margin-bottom: 6px;
+    margin-bottom: 0px;
+    background: #353535;
     border: 0px;
 }
 
 #mode {
-    border-radius: 10px;
+    border-radius: 20px;
     margin-left: 4px;
-    color: #78cad8;
-    background: #262c3c;
-}
-
-#backlight {
-    border-radius: 20px 6px 6px 20px;
-    border-right: 0px;
-    margin-right: 2px;
 }
 
 #window {
+	background: none;
     border-radius: 10px;
     margin-left: 4px;
+    color: #353535;
 }
 
 #clock {
     color: #ffffff;
-    background: #262c3c;
     border-radius: 20px;
     margin-right: 5px;
 }
@@ -95,7 +88,7 @@ tooltip {
 
 #memory {
     border-radius: 0 20px 20px 0;
-    margin-right: 5px;
+    margin-right: 4px;
 }
 
 #network {
@@ -105,11 +98,13 @@ tooltip {
 #bluetooth {
     border-radius: 0px 20px 20px 0px;
     margin-right: 5px;
+    padding-right: 5px;
 }
 
 #pulseaudio {
     border-radius: 0px 20px 20px 0px;
-    margin-right: 5px;
+    margin-right: 4px;
+    margin-left: 0px;
 }
 
 #pulseaudio.microphone {
@@ -120,5 +115,11 @@ tooltip {
 
 #battery {
     border-radius: 20px;
-    margin-right: 4px;
+	margin-right: 5px;
+}
+#custom-arch {
+	border-radius: 20px;
+	margin-right: 5px;
+	padding-right: 8px;
+	margin-left: 4px;
 }

@@ -18,14 +18,14 @@
 }
 
 #entry:selected {
-  background-color: #262c3c;
+  background-color: #36483b;
   color: #262c3c;
   border-radius: 10px;
 }
 
 window {
-  border: 2px solid #78cad8;
+  border: 2px solid #8aa493;
   color: #ffffff;
   border-radius: 10px;
-  background-color: #1f212b;
+  background-color: #1c1c1c;
 }

@@ -1,2 +1,2 @@
-exec swww init
+exec swww-daemon --format xrgb
 exec swww img ~/.config/sway/wallpaper.png

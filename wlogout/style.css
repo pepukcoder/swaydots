@@ -1,5 +1,5 @@
 window {
-    font-family: JetBrains Nerd Font, mono;
+    font-family: JetBrains Nerd Font, bold;
     font-size: 12pt;
     color: #cdd6f4; 
     background-color: rgba(0, 0, 0, 0.7);
@@ -25,7 +25,7 @@ button:hover {
 }
 
 button:focus {
-    background-color: #78cad8;
+    background-color: #546857;
     color: #000000;
     text-shadow: none;
 }
@@ -34,26 +34,26 @@ button:focus {
     background-image: image(url("./lock.png"));
 }
 #lock:focus {
-    background-image: image(url("./lock-hover.png"));
+    background-image: image(url("./lock.png"));
 }
 
 #suspend {
     background-image: image(url("./sleep.png"));
 }
 #suspend:focus {
-    background-image: image(url("./sleep-hover.png"));
+    background-image: image(url("./sleep.png"));
 }
 
 #shutdown {
     background-image: image(url("./power.png"));
 }
 #shutdown:focus {
-    background-image: image(url("./power-hover.png"));
+    background-image: image(url("./power.png"));
 }
 
 #reboot {
     background-image: image(url("./restart.png"));
 }
 #reboot:focus {
-    background-image: image(url("./restart-hover.png"));
+    background-image: image(url("./restart.png"));
 }

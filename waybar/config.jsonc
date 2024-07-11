@@ -1,15 +1,15 @@
 {
     "layer": "top",
-    "modules-left": ["sway/workspaces","sway/mode","sway/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu","memory","network","bluetooth","pulseaudio#microphone","pulseaudio","battery"],
+    "modules-left": ["custom/arch","sway/workspaces","sway/mode","sway/window"],
+    "modules-center": ["network","bluetooth","battery","clock"],
+    "modules-right": ["pulseaudio#microphone","pulseaudio","cpu","memory"],
     "sway/window": {
         "max-length": 50
     },
     
     "clock": {
-        "format": "{: %H:%M}",
-	"format-alt": "{: %d.%m.%Y}",
+        "format": " {:%H:%M}",
+	"format-alt": " {:%d.%m.%Y}",
 	"tooltip-format": "<span font='Jetbrains Nerd Font Mono 10'><big>{:%d %B}</big>\n<tt><small>{calendar}</small></tt></span>"
     },
     
@@ -28,9 +28,9 @@
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "tooltip": false,
-        "format-muted": "Muted",
+        "format-muted": " Muted",
         "on-click": "pamixer -t",
         "on-scroll-up": "pamixer -i 5",
         "on-scroll-down": "pamixer -d 5",
@@ -64,12 +64,12 @@
     },
 
     "bluetooth": {
-	"format": "+",
-	"format-disabled": "",
-	"format-connected": "C",
+	"format": "",
+	"format-disabled": "󰂲",
+	"format-connected": "󰂰",
 	"tooltip-format-connected": " {device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}",
-	"on-click": "exec blueberry"
+	"on-click": "kitty bluetuith"
     },
     
     "cpu": {
@@ -81,7 +81,13 @@
     "memory": {
         "interval": 5,
         "format": " {}%",
-        "format-alt":" {used:0.1f}G",
+        "format-alt":" {used:0.2f}G",
+        "tooltip": false,
         "max-length": 10
+    },
+    "custom/arch": {
+    	"format": "󰣇",
+    	"tooltip": false,
+    	"on-click": "kitty btop", 
     }
 }
