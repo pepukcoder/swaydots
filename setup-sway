@@ -4,13 +4,14 @@
 echo -e "Installing packages...\n"
 
 yay -S --noconfirm \
-swayfx swww waybar kitty wofi xorg-xwayland\
+swayfx wofi swww waybar mako wlogout xorg-xwayland \
+grim swappy slurp \
+pipewire-pulse wireplumber \
+bluez bluez-utils bluetuith \
 ttf-jetbrains-mono-nerd noto-fonts-emoji ttf-font-awesome \
-pulseaudio pamixer \
-swappy grim slurp \
-bluez bluez-utils blueberry\ 
-xfce4-settings dracula-icons-git \
-ranger cava neofetch micro python-pillow \
+kitty neofetch micro ranger python-pillow \
+firefox telegram-desktop-bin visual-studio-code-bin \
+dotnet-host-bin dotnet-sdk-bin
 
 ### Enable bluetooth ###
 echo -e "Starting the Bluetooth Service...\n"
@@ -24,15 +25,9 @@ cp -R waybar ~/.config/
 cp -R wofi ~/.config/
 cp -R wlogout ~/.config/
 cp -R kitty ~/.config/    
-
-cp -R ranger ~/.config/
-cp -R cava ~/.config/
+cp -R mako ~/.config/
 cp -R neofetch ~/.config/
 cp -R micro ~/.config/
-
-### Install pacman mirrors script ###
-cp -R updmirror /usr/local/bin/
-chmod +x /usr/local/bin/updmirror
 
 ### Script is done ###
 echo -e "Script had completed.\n"

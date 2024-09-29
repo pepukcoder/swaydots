@@ -4,13 +4,13 @@ set $menu wofi --show drun
 set $scrsht grim -g "$(slurp)" - | swappy -f -
 
 floating_modifier $mod normal
-scratchpad_minimize disable
+scratchpad_minimize enable
 
 bindsym --to-code {
 #Run
 $mod+Return exec $term
 $mod+Space exec $menu
-$mod+q exec wlogout -b 4 --protocol layer-shell
+$mod+q exec wlogout -b 4 -p layer-shell
 Print exec $scrsht
 
 #Sway
@@ -21,6 +21,7 @@ $mod+minus scratchpad show
 
 #Volume
 XF86AudioMute exec pamixer -t
+XF86AudioMicMute exec pamixer --default-source -t
 XF86AudioRaiseVolume exec pamixer -i 5
 XF86AudioLowerVolume exec pamixer -d 5
 
@@ -62,7 +63,6 @@ $mod+v splitv
 $mod+b splith
 $mod+f fullscreen
 $mod+t floating toggle
-$mod+a focus mode_toggle
 $mod+r mode "resize"
 }
 
@@ -74,4 +74,3 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-

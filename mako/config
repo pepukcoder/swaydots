@@ -1,0 +1,23 @@
+anchor=top-right
+margin=4
+width=200
+
+history=1
+max-history=10
+max-visible=5
+ignore-timeout=1
+default-timeout=5000
+
+format=<b>%a</b>\n%s\n%b
+
+[app-name="Telegram Desktop"]
+format=<b>%s:</b>\n%b
+
+max-icon-size=40
+
+border-size=2
+border-radius=5
+
+background-color=#323232
+border-color=#c6c6c6
+font=JetBrainsMono

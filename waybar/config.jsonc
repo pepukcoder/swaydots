@@ -1,34 +1,98 @@
 {
-    "layer": "top",
-    "modules-left": ["sway/workspaces","sway/mode","sway/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu","memory","network","bluetooth","pulseaudio#microphone","pulseaudio","battery"],
-    "sway/window": {
-        "max-length": 50
-    },
+    "position": "bottom",
+    "modules-left": [
+    	"custom/arch",
+        "sway/workspaces",
+        "sway/scratchpad",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "network",
+        "bluetooth",
+        "battery",
+        "cpu",
+        "memory",
+        "clock",
+        "tray",
+        "custom/notification"
+    ],
     
-    "clock": {
-        "format": "{: %H:%M}",
-	"format-alt": "{: %d.%m.%Y}",
-	"tooltip-format": "<span font='Jetbrains Nerd Font Mono 10'><big>{:%d %B}</big>\n<tt><small>{calendar}</small></tt></span>"
+    "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{name}",
     },
-    
+    "sway/mode": {
+        "format": "{}"
+    },
+	"sway/window": {
+		"format": "{title}",
+		"max-length": 40,
+		"icon": true,
+		"icon-size": 20,
+		"tooltip": false
+    },   
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10        
+    },
+	"clock": {
+	    "format": " {:%H:%M}",
+		"format-alt": " {:%d.%m.%Y}",
+		"tooltip-format": "<span font='Jetbrains Nerd Font Mono 10'><big>{:%d %B}</big>\n<tt><small>{calendar}</small></tt></span>"
+	},
+    "cpu": {
+      "interval": 5,
+      "format": " {usage}%",
+      "max-length": 10
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {}%",
+        "format-alt":" {used:0.1f}G",
+        "max-length": 10
+    },
     "battery": {
         "states": {
-            "good": 95,
-            "warning": 10,
-            "critical": 5
+            "good": 90,
+            "warning": 30,
+            "critical": 20
         },
         "interval": 5,
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-	"tooltip": false,
+        "format-charging": " {capacity}%",
         "format-icons": ["", "", "", "", ""]
     },
-
+    "network": {
+    	"interval": 5,
+        "format-wifi": " ",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "format-disconnected": " ",
+        "format-alt": " {bandwidthDownBytes}"
+    },
+    "bluetooth": {
+    	"format": "",
+    	"format-disabled": "",
+    	"format-connected": "C",
+    	"tooltip-format-connected": " {device_enumerate}",
+    	"tooltip-format-enumerate-connected": "{device_alias}",
+    	"on-click": "exec kitty bluetuith"
+    },    
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon} {volume}",
         "tooltip": false,
         "format-muted": "Muted",
         "on-click": "pamixer -t",
@@ -45,43 +109,21 @@
             "default": ["", "", ""]
         }
     },
-
-    "pulseaudio#microphone": {
+	"pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " ",
+        "format-source": "",
         "format-source-muted": " ",
-	"tooltip": false,
-	"on-click": "pamixer --default-source -t",
+		"tooltip": false,
+		"on-click": "pamixer --default-source -t",
     },
-
-    "network": {
-        "format-wifi": " ",
-        "tooltip-format": "{essid}",
-        "format-linked": "{ifname}",
-        "format-disconnected": " ",
-	"interval": 5,
-	"format-alt": " {bandwidthDownBytes}",
+    "custom/notification": {
+    	"tooltip": false,
+    	"format": "",
+    	"on-click": "makoctl restore",
+    	"on-click-right": "makoctl dismiss -a",
     },
-
-    "bluetooth": {
-	"format": "+",
-	"format-disabled": "",
-	"format-connected": "C",
-	"tooltip-format-connected": " {device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}",
-	"on-click": "exec blueberry"
-    },
-    
-    "cpu": {
-      "interval": 5,
-      "format": " {usage}%",
-      "max-length": 10
-    },
-
-    "memory": {
-        "interval": 5,
-        "format": " {}%",
-        "format-alt":" {used:0.1f}G",
-        "max-length": 10
-    }
+    "custom/arch": {
+    	"tooltip": false,
+    	"format": "󰣇",
+    }, 
 }

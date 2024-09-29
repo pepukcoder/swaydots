@@ -1,5 +1,6 @@
-#corner_radius 5
 default_border pixel 2
+default_floating_border pixel 2
+xwayland enable
 
 gaps inner 4
 
@@ -9,18 +10,20 @@ blur_passes 2
 blur_radius 5
 shadows on
 shadows_on_csd off
-shadow_blur_radius 4
+shadow_blur_radius 8
 shadow_color #0000007F
 
-default_dim_inactive 0.0
+client.focused #000000 #ae2a25 #ffffff #ae2a25 
+client.unfocused #000000 #c6c6c6 #ffffff #c6c6c6
+client.focused_inactive #000000 #c6c6c6 #ffffff #c6c6c6
 
-client.focused #000000 #78CAD8 #FFFFFF
-client.unfocused #000000 #262C3C #FFFFFF
+default_dim_inactive 0.0
+dim_inactive_colors.unfocused #303030
+dim_inactive_colors.urgent #903030
 
 bar {
-    position top
+    position bottom
     swaybar_command waybar
 }
 
 include config.d/*
-include /etc/sway/config.d/*

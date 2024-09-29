@@ -1,4 +1,4 @@
 input * {
-    xkb_layout "us,ru"
-    xkb_options "grp:lalt_lshift_toggle"
+	xkb_layout "us,ru"
+	xkb_options "grp:lalt_lshift_toggle"
 }

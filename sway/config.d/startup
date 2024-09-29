@@ -1,2 +1,3 @@
-exec swww init
-exec swww img ~/.config/sway/wallpaper.png
+exec swww-daemon --format xrgb
+exec swww img ~/.config/sway/wallpaper.png --transition-type center
+exec mako
